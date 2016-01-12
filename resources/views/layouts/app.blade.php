@@ -8,10 +8,26 @@
     <title>{{ $meta['page_meta_title'] }}</title>
     @if($meta['page_meta_description'])
         <meta name="description" content="{{ $meta['page_meta_description'] }}">
-        @endif
+    @endif
 
-                <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', '{{ env('GA_TRACKING_CODE') }}', 'auto');
+        ga('send', 'pageview');
+    </script>
 </head>
 <body id="app-layout">
 <nav class="navbar navbar-default">
@@ -65,15 +81,6 @@
     window.Emdlog = {
         csrfToken: '{{ csrf_token() }}'
     }
-</script>
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', '{{ env('GA_TRACKING_CODE') }}', 'auto');
-    ga('send', 'pageview');
 </script>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
