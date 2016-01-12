@@ -44,7 +44,7 @@ function get_footer()
 
 function get_article($slug)
 {
-    $article = app(App\Models\Article::class)->whereSlug($slug)->first();
+    $article = app(App\Models\Article::class)->withoutGlobalScopes()->whereSlug($slug)->first();
 
     if (!$article) {
         return with(new App\Models\Article)->article;
