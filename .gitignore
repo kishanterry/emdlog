@@ -1,6 +1,7 @@
 # Laravel Ignore files #
-/vendor
 /node_modules
+/storage
+/vendor
 /bower_components
 Homestead.yaml
 Homestead.json

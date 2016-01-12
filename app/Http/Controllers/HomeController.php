@@ -10,11 +10,12 @@ class HomeController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('auth');
+
+        parent::__construct();
     }
 
     /**
@@ -24,6 +25,8 @@ class HomeController extends Controller
      */
     public function dashboard()
     {
+        $this->setMetaTitle('Dashboard');
+
         return view('dashboard');
     }
 }

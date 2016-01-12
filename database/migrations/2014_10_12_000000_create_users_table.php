@@ -20,6 +20,12 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        factory(App\Models\User::class)->create([
+            'name' => 'Amith Gotamey',
+            'email' => 'amith@example.com',
+            'password' => bcrypt('password'),
+        ]);
     }
 
     /**

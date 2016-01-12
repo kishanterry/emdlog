@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -7824,7 +7825,89 @@ button.close {
 .fa-percent:before {
   content: ""; }
 
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px; }
+
 .fa-btn {
   margin-right: 6px; }
+
+.article {
+  padding-bottom: 30px;
+  margin-top: 20px;
+  border-bottom: 1px solid #CDCDCD; }
+
+#text-editor {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  #text-editor .alert {
+    width: 300px; }
+
+.text-editor {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .text-editor .editor {
+    width: 800px;
+    height: 800px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid #CDCDCD; }
+    .text-editor .editor .editor-title {
+      width: 798px;
+      padding: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: none;
+      border-bottom: 1px solid #EFEFEF;
+      outline: none; }
+    .text-editor .editor .editor-article {
+      resize: none;
+      width: 798px;
+      height: 756px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none; }
+  .text-editor .preview {
+    width: 800px;
+    height: 800px;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #CDCDCD;
+    border-left: none;
+    overflow-x: hidden;
+    overflow-y: scroll; }
+
+.profile {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  border: 10px solid #efefef;
+  border-radius: 100px;
+  box-shadow: 0px 0px 20px #333; }
+
+.social {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .social a {
+    color: #777;
+    font-size: 28px;
+    padding: 0 5px; }
 
 /*# sourceMappingURL=app.css.map */
