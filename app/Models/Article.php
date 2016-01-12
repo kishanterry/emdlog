@@ -35,7 +35,8 @@ class Article extends Model
 
         if (app('auth')->guest()) {
             static::addGlobalScope('published', function (Builder $query) {
-                $query->where('published', '=', true);
+                $query->where('published', '=', true)
+                    ->whereNotIn('slug', ['home', 'footer']);
             });
         }
     }
