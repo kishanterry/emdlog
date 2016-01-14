@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h1 class="page-title">
-            Articles
+    <div class="container" itemscope itemtype="http://schema.org/Blog">
+        <h1 class="page-title" itemprop="name">
+            Articles by me
             @if(!app('auth')->guest())
             <a href="{{ url('/articles/create') }}" class="btn btn-default">
                 <i class="fa fa-pencil"></i>
@@ -12,15 +12,15 @@
             @endif
         </h1>
         @forelse($articles as $article)
-            <article class="media article">
+            <article class="media article" itemscope itemtype="http://schema.org/BlogPosting">
                 <div class="media-body">
                     <h3 class="media-heading">
-                        <a href="{{ url("/articles/{$article->slug}") }}">
+                        <a href="{{ url("/articles/{$article->slug}") }}" itemprop="headline">
                             {{ $article->title }}
                         </a>
                     </h3>
                     <p>
-                        <small>
+                        <small itemprop="datePublished">
                             <i class="fa fa-calendar"></i>
                             {{ $article->created_at->diffForHumans() }}
                         </small>
@@ -37,7 +37,9 @@
                             </small>
                         @endif
                     </p>
-                    {{ $article->excerpt }}
+                    <div itemprop="text">
+                        {{ $article->excerpt }}
+                    </div>
                 </div>
             </article>
         @empty
